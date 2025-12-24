@@ -208,10 +208,10 @@ export default function Index() {
       <section className="py-20 bg-sage-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Prêt à Découvrir GOMONOVIA ?
+            Prêt(e) à découvrir GOMONOVIA ?
           </h2>
           <p className="text-xl text-sage-100 mb-12 max-w-2xl mx-auto">
-            Rejoignez-nous dans notre mission pour une nutrition plus saine, naturelle et scientifiquement fondée.
+            Rejoignez notre mission pour une nutrition plus saine, gourmande et naturelle.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
