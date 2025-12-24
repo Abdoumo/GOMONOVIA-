@@ -22,12 +22,12 @@ export default function Index() {
                   GOMONOVIA
                 </h1>
                 <p className="text-2xl md:text-3xl text-sage-700 font-light">
-                  Une approche scientifique de la satiété fondée sur des ingrédients naturels
+                   Sweet satiety
                 </p>
               </div>
 
               <p className="text-lg text-sage-600 mb-8 leading-relaxed">
-                Découvrez une solution naturelle et scientifiquement fondée pour accompagner vos objectifs de santé et de bien-être.
+                GOMONOVIA, gourmande, naturelle et efficace pour accompagner votre silhouette.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
