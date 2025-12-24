@@ -54,7 +54,7 @@ export default function Product() {
                   GOMONOVIA – Gummies Naturels à Effet Satiétogène
                 </h2>
                 <p className="text-sage-700 text-lg leading-relaxed">
-                  Les gummies GOMONOVIA sont formulés à partir d'ingrédients naturels soigneusement sélectionnés, destinés à soutenir les signaux physiologiques de satiété, sous une forme plus agréable et facile à consommer.
+                  Ces gummies délicieux sont conçus pour réduire les envies de grignotage, soutenir votre métabolisme et vous aider à mieux gérer vos portions, sans frustration. Une solution simple et pratique à intégrer dans votre quotidien.
                 </p>
               </div>
 
@@ -65,29 +65,32 @@ export default function Product() {
                   <div className="flex items-start gap-4 p-4 bg-sage-50 rounded-lg">
                     <span className="text-2xl">🌿</span>
                     <div>
-                      <h4 className="font-bold text-sage-900">Extrait Végétal Naturel</h4>
-                      <p className="text-sage-600 text-sm">Source de composés actifs naturels</p>
+                      <h4 className="font-bold text-sage-900"> Réduit l’appétit et les envies de grignotage</h4>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 p-4 bg-sage-50 rounded-lg">
                     <span className="text-2xl">🌾</span>
                     <div>
-                      <h4 className="font-bold text-sage-900">Fibres Alimentaires</h4>
-                      <p className="text-sage-600 text-sm">Soutient la satiété et le bien-être digestif</p>
+                      <h4 className="font-bold text-sage-900">Soutient le métabolisme et la gestion des graisses</h4>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 p-4 bg-sage-50 rounded-lg">
                     <span className="text-2xl">🍋</span>
                     <div>
-                      <h4 className="font-bold text-sage-900">Arômes Naturels</h4>
-                      <p className="text-sage-600 text-sm">Citron naturel pour une saveur agréable</p>
+                      <h4 className="font-bold text-sage-900">gummies gourmand, facile à consommer</h4>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 p-4 bg-sage-50 rounded-lg">
                     <span className="text-2xl">✨</span>
                     <div>
-                      <h4 className="font-bold text-sage-900">Gélatine</h4>
-                      <p className="text-sage-600 text-sm">Support naturel pour la texture gummy</p>
+                      <h4 className="font-bold text-sage-900">Formule sans sucre ajouté</h4>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-4 bg-sage-50 rounded-lg">
+                    <span className="text-2xl">✨</span>
+                    <div>
+                      <h4 className="font-bold text-sage-900"> Convient dès 12 ans</h4>
                     </div>
                   </div>
                 </div>
@@ -99,19 +102,26 @@ export default function Product() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="flex items-center gap-3 p-3 border-2 border-sage-200 rounded-lg">
                     <span className="text-sage-600 text-xl">🍋</span>
-                    <span className="text-sage-700">Arôme Citron</span>
+                    <span className="text-sage-700">Gélatine</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 border-2 border-sage-200 rounded-lg">
                     <span className="text-sage-600 text-xl">🚫</span>
-                    <span className="text-sage-700">Sans Sucre</span>
+                    <span className="text-sage-700">Eau</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 border-2 border-sage-200 rounded-lg">
                     <span className="text-sage-600 text-xl">👶</span>
-                    <span className="text-sage-700">À partir de 12 ans</span>
+                    <span className="text-sage-700">Fibres alimentaires</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 border-2 border-sage-200 rounded-lg">
                     <span className="text-sage-600 text-xl">⭐</span>
-                    <span className="text-sage-700">Formule Brevetée</span>
+                    <span className="text-sage-700">Extrait de stévia</span>
+                  </div>                  <div className="flex items-center gap-3 p-3 border-2 border-sage-200 rounded-lg">
+                    <span className="text-sage-600 text-xl">👶</span>
+                    <span className="text-sage-700">Acide citrique (E330)</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 border-2 border-sage-200 rounded-lg">
+                    <span className="text-sage-600 text-xl">⭐</span>
+                    <span className="text-sage-700">Arôme naturel citron</span>
                   </div>
                 </div>
               </div>

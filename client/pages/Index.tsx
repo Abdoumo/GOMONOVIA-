@@ -128,7 +128,7 @@ export default function Index() {
 
             <div>
               <p className="text-lg text-sage-700 mb-8 leading-relaxed">
-                Les gummies GOMONOVIA sont formulés à partir d'ingrédients naturels soigneusement sélectionnés, destinés à soutenir les signaux physiologiques de satiété, sous une forme plus agréable et facile à consommer.
+                Ces gummies délicieux sont conçus pour réduire les envies de grignotage, soutenir votre métabolisme et vous aider à mieux gérer vos portions, sans frustration. Une solution simple et pratique à intégrer dans votre quotidien.
               </p>
 
               <div className="space-y-6">
