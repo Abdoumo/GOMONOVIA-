@@ -133,7 +133,7 @@ export default function Index() {
 
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-bold text-sage-900 mb-3">Ingrédients Clés</h4>
+                  <h4 className="font-bold text-sage-900 mb-3">Pourquoi choisir GOMONOVIA ?</h4>
                   <ul className="space-y-2 text-sage-700">
                     <li className="flex items-start gap-3">
                       <span className="text-sage-600 font-bold">•</span>

@@ -60,7 +60,7 @@ export default function Product() {
 
               {/* Key Ingredients */}
               <div>
-                <h3 className="text-2xl font-bold text-sage-900 mb-4">Ingrédients Clés</h3>
+                <h3 className="text-2xl font-bold text-sage-900 mb-4">Pourquoi choisir GOMONOVIA ?</h3>
                 <div className="space-y-3">
                   <div className="flex items-start gap-4 p-4 bg-sage-50 rounded-lg">
                     <span className="text-2xl">🌿</span>
@@ -98,7 +98,7 @@ export default function Product() {
 
               {/* Characteristics */}
               <div>
-                <h3 className="text-2xl font-bold text-sage-900 mb-4">Caractéristiques</h3>
+                <h3 className="text-2xl font-bold text-sage-900 mb-4">Ingrédients</h3>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="flex items-center gap-3 p-3 border-2 border-sage-200 rounded-lg">
                     <span className="text-sage-600 text-xl">🍋</span>

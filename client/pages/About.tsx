@@ -26,11 +26,9 @@ export default function About() {
             <div>
               <h2 className="text-3xl font-bold text-sage-900 mb-6">Qui Sommes-nous ?</h2>
               <p className="text-sage-700 mb-6 leading-relaxed">
-                GOMONOVIA est un projet innovant dédié au développement de solutions naturelles alliant santé, science et plaisir. Nous concevons des produits à base d'ingrédients d'origine naturelle, capables d'offrir un goût sucré sans ajout de sucre, en réponse aux enjeux actuels de nutrition et de bien-être.
+               GOMONOVIA est un projet innovant dédié à la santé, la gourmandise et la naturalité. Nous créons des produits délicieux à base d’ingrédients naturels pour vous aider à mieux gérer votre alimentation, sans sucre ajouté et sans compromis sur le goût.
               </p>
-              <p className="text-sage-700 leading-relaxed">
-                Notre démarche repose sur une approche scientifique rigoureuse, intégrant la biochimie, chimie et la nutrition, afin de garantir des produits efficaces, sûrs et agréables à consommer, tout en respectant l'équilibre métabolique.
-              </p>
+
             </div>
 
             <div className="bg-sage-50 rounded-2xl p-12">
@@ -49,63 +47,30 @@ export default function About() {
             <div className="border-2 border-sage-200 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-sage-900 mb-4">Notre Mission</h3>
               <p className="text-sage-700">
-                Développer des solutions naturelles, accessibles et scientifiquement fondées pour accompagner des habitudes alimentaires plus saines.
+               Proposer des solutions naturelles, accessibles et efficaces pour accompagner des habitudes alimentaires plus équilibrées.
               </p>
             </div>
 
             <div className="border-2 border-sage-200 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-sage-900 mb-4">Notre Vision</h3>
               <p className="text-sage-700">
-                Contribuer à un avenir où les produits naturels validés scientifiquement occupent une place centrale dans la santé métabolique.
-              </p>
+               Que les produits naturels validés scientifiquement deviennent un allié quotidien pour votre bien-être et votre santé métabolique.
+                  </p>
             </div>
 
             <div className="border-2 border-sage-200 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-sage-900 mb-4">Nos Valeurs</h3>
               <p className="text-sage-700">
-                Naturel, scientifiquement rigoureux, accessible et durable pour le bien-être de chacun.
+               🌿 Naturel – Des ingrédients a base de plantes, pour un plaisir sans compromis <br />
+💪 Bien-être – Pour mieux contrôler vos envies et prendre soin de vous<br />
+🚀 Innovation – Une formule moderne, efficace et facile à adopter<br />
+✨ Accessibilité – Des gummies pratiques à intégrer dans votre quotidien<br />
               </p>
             </div>
           </div>
 
           {/* Approach */}
-          <div className="bg-sage-50 rounded-2xl p-12">
-            <h2 className="text-3xl font-bold text-sage-900 mb-8">Notre Approche Scientifique</h2>
-            <p className="text-sage-700 mb-8 leading-relaxed">
-              Le développement de GOMONOVIA repose sur l'optimisation des formulations, l'analyse biochimique des ingrédients et la préparation à des évaluations futures en laboratoire et en milieu clinique.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="font-bold text-sage-900 mb-4">Principes</h3>
-                <ul className="space-y-3 text-sage-700">
-                  <li className="flex items-start gap-3">
-                    <span className="text-sage-600 font-bold">✓</span>
-                    <span>Rigueur scientifique</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-sage-600 font-bold">✓</span>
-                    <span>Ingrédients naturels</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-sage-600 font-bold">✓</span>
-                    <span>Sécurité et efficacité</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-sage-600 font-bold">✓</span>
-                    <span>Innovation durable</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-sage-900 mb-4">Engagement</h3>
-                <p className="text-sage-700">
-                  Nous transformons la recherche scientifique en solutions naturelles concrètes, au service d'une nutrition moderne et responsable.
-                </p>
-              </div>
-            </div>
-          </div>
+      
         </div>
       </section>
 
