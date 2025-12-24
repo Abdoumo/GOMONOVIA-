@@ -12,7 +12,6 @@ export default function Header() {
     { label: "Accueil", href: "/" },
     { label: "À propos", href: "/about" },
     { label: "Produit", href: "/product" },
-    { label: "Science", href: "/science" },
     { label: "Contact", href: "/contact" },
   ];
 

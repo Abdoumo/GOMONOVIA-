@@ -137,19 +137,22 @@ export default function Index() {
                   <ul className="space-y-2 text-sage-700">
                     <li className="flex items-start gap-3">
                       <span className="text-sage-600 font-bold">•</span>
-                      <span>Extrait végétal naturel</span>
+                      <span> Réduit l’appétit et les envies de grignotage</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-sage-600 font-bold">•</span>
-                      <span>Fibres alimentaires</span>
+                      <span>Soutient le métabolisme et la gestion des graisses</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-sage-600 font-bold">•</span>
-                      <span>Arômes naturels</span>
+                      <span> gummies gourmand, facile à consommer</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-sage-600 font-bold">•</span>
-                      <span>Gélatine</span>
+                      <span> Formule sans sucre ajouté</span>
+                    </li><li className="flex items-start gap-3">
+                      <span className="text-sage-600 font-bold">•</span>
+                      <span>Convient dès 12 ans</span>
                     </li>
                   </ul>
                 </div>
@@ -198,117 +201,8 @@ export default function Index() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-20 bg-sage-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-sage-900 mb-16 text-center">
-            À Propos de GOMONOVIA
-          </h2>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <div>
-              <h3 className="text-2xl font-bold text-sage-900 mb-6">Qui Sommes-nous ?</h3>
-              <p className="text-sage-700 mb-6 leading-relaxed">
-                GOMONOVIA est un projet innovant dédié au développement de solutions naturelles alliant santé, science et plaisir. Nous concevons des produits à base d'ingrédients d'origine naturelle, capables d'offrir un goût sucré sans ajout de sucre, en réponse aux enjeux actuels de nutrition et de bien-être.
-              </p>
-              <p className="text-sage-700 leading-relaxed">
-                Notre démarche repose sur une approche scientifique rigoureuse, intégrant la biochimie, chimie et la nutrition, afin de garantir des produits efficaces, sûrs et agréables à consommer, tout en respectant l'équilibre métabolique.
-              </p>
-            </div>
 
-            <div>
-              <h3 className="text-2xl font-bold text-sage-900 mb-6">Notre Conviction</h3>
-              <p className="text-sage-700 mb-6 leading-relaxed">
-                À travers GOMONOVIA, nous portons la conviction que la nature, soutenue par la recherche et la science, constitue un levier stratégique pour accompagner durablement l'évolution vers des modes de vie plus sains.
-              </p>
-
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-bold text-sage-900 mb-2">Notre Mission</h4>
-                  <p className="text-sage-700">
-                    Développer des solutions naturelles, accessibles et scientifiquement fondées pour accompagner des habitudes alimentaires plus saines.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-bold text-sage-900 mb-2">Notre Vision</h4>
-                  <p className="text-sage-700">
-                    Contribuer à un avenir où les produits naturels validés scientifiquement occupent une place centrale dans la santé métabolique.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Science Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-sage-900 mb-16 text-center">
-            Science &amp; Recherche
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
-            <div>
-              <h3 className="text-2xl font-bold text-sage-900 mb-6">Fondements Scientifiques</h3>
-              <p className="text-sage-700 mb-6 leading-relaxed">
-                La régulation de la satiété repose sur des interactions complexes entre le système digestif, les signaux hormonaux et le système nerveux central. La littérature scientifique souligne le rôle des fibres alimentaires et de certains composés d'origine végétale dans ces processus.
-              </p>
-              <p className="text-sage-700 leading-relaxed">
-                GOMONOVIA adopte une démarche structurée incluant l'optimisation des formulations, l'évaluation de la sécurité et la préparation à de futures études cliniques.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold text-sage-900 mb-6">Feuille de Route de Validation</h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-sage-600 text-white rounded-full flex items-center justify-center font-bold">
-                    1
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-sage-900">Tests en laboratoire</h4>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-sage-600 text-white rounded-full flex items-center justify-center font-bold">
-                    2
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-sage-900">Études précliniques</h4>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-sage-600 text-white rounded-full flex items-center justify-center font-bold">
-                    3
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-sage-900">Évaluations de sécurité</h4>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-sage-600 text-white rounded-full flex items-center justify-center font-bold">
-                    4
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-sage-900">Essais cliniques futurs</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <Link
-              to="/science"
-              className="inline-block px-8 py-4 bg-sage-600 text-white rounded-lg hover:bg-sage-700 transition-colors font-semibold"
-            >
-              Lire notre approche scientifique
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-sage-600 text-white">

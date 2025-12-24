@@ -38,11 +38,7 @@ export default function Footer() {
                   Produit
                 </Link>
               </li>
-              <li>
-                <Link to="/science" className="hover:text-white transition-colors">
-                  Science
-                </Link>
-              </li>
+
               <li>
                 <Link to="/contact" className="hover:text-white transition-colors">
                   Contact
