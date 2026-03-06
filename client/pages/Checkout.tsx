@@ -102,8 +102,9 @@ export default function Checkout() {
         })
       );
 
-      // Clear cart
+      // Clear cart - both state and localStorage
       clearCart();
+      localStorage.setItem("gomonovia_cart", JSON.stringify({ items: [], total: 0 }));
       setIsProcessing(false);
 
       // Navigate to thank you page

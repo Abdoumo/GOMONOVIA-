@@ -66,167 +66,142 @@ export default function AdminDashboard() {
     <AdminLayout>
       <div className="space-y-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-gray-500 mt-2">Welcome back to the admin panel</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-sage-900">Tableau de Bord Admin</h1>
+          <p className="text-sage-600 mt-2 text-lg">Gérez votre plateforme et surveillez les performances</p>
         </div>
 
         {/* KPI Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Users</CardTitle>
-              <Users className="h-4 w-4 text-blue-600" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{totalUsers}</div>
-              <p className="text-xs text-gray-500">Registered users</p>
-            </CardContent>
-          </Card>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-white border-2 border-sage-200 rounded-lg p-6 hover:border-sage-600 transition-colors">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-sage-600 text-sm font-semibold">Total d'Utilisateurs</h3>
+              <Users className="h-6 w-6 text-sage-600 opacity-50" />
+            </div>
+            <div className="text-3xl font-bold text-sage-900">{totalUsers}</div>
+            <p className="text-xs text-sage-500 mt-2">Utilisateurs enregistrés</p>
+          </div>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Products</CardTitle>
-              <Package className="h-4 w-4 text-purple-600" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{totalProducts}</div>
-              <p className="text-xs text-gray-500">Products in catalog</p>
-            </CardContent>
-          </Card>
+          <div className="bg-white border-2 border-sage-200 rounded-lg p-6 hover:border-sage-600 transition-colors">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-sage-600 text-sm font-semibold">Total de Produits</h3>
+              <Package className="h-6 w-6 text-sage-600 opacity-50" />
+            </div>
+            <div className="text-3xl font-bold text-sage-900">{totalProducts}</div>
+            <p className="text-xs text-sage-500 mt-2">Produits au catalogue</p>
+          </div>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Orders</CardTitle>
-              <ShoppingCart className="h-4 w-4 text-green-600" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{totalOrders}</div>
-              <p className="text-xs text-gray-500">All orders</p>
-            </CardContent>
-          </Card>
+          <div className="bg-white border-2 border-sage-200 rounded-lg p-6 hover:border-sage-600 transition-colors">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-sage-600 text-sm font-semibold">Total des Commandes</h3>
+              <ShoppingCart className="h-6 w-6 text-sage-600 opacity-50" />
+            </div>
+            <div className="text-3xl font-bold text-sage-900">{totalOrders}</div>
+            <p className="text-xs text-sage-500 mt-2">Toutes les commandes</p>
+          </div>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Accepted Orders</CardTitle>
-              <ShoppingCart className="h-4 w-4 text-emerald-600" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{acceptedOrders}</div>
-              <p className="text-xs text-gray-500">Completed orders</p>
-            </CardContent>
-          </Card>
+          <div className="bg-white border-2 border-sage-200 rounded-lg p-6 hover:border-sage-600 transition-colors">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-sage-600 text-sm font-semibold">Commandes Acceptées</h3>
+              <ShoppingCart className="h-6 w-6 text-green-600 opacity-50" />
+            </div>
+            <div className="text-3xl font-bold text-green-600">{acceptedOrders}</div>
+            <p className="text-xs text-sage-500 mt-2">Commandes complétées</p>
+          </div>
         </div>
 
         {/* Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Orders per day */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Orders per Day</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {ordersPerDayData.length > 0 ? (
-                <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={ordersPerDayData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="day" />
-                    <YAxis />
-                    <Tooltip />
-                    <Line
-                      type="monotone"
-                      dataKey="orders"
-                      stroke="#3b82f6"
-                      strokeWidth={2}
-                      dot={{ fill: '#3b82f6' }}
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
-              ) : (
-                <p className="text-center text-gray-500 py-8">No order data</p>
-              )}
-            </CardContent>
-          </Card>
+          <div className="bg-white border-2 border-sage-200 rounded-lg p-6">
+            <h2 className="text-xl font-bold text-sage-900 mb-6">Commandes par Jour</h2>
+            {ordersPerDayData.length > 0 ? (
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart data={ordersPerDayData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e5e7a5" />
+                  <XAxis dataKey="day" stroke="#78854f" />
+                  <YAxis stroke="#78854f" />
+                  <Tooltip contentStyle={{ backgroundColor: '#f4f3f1', border: '2px solid #78854f' }} />
+                  <Line
+                    type="monotone"
+                    dataKey="orders"
+                    stroke="#78854f"
+                    strokeWidth={3}
+                    dot={{ fill: '#78854f', r: 5 }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            ) : (
+              <p className="text-center text-sage-500 py-8">Aucune donnée de commande</p>
+            )}
+          </div>
 
           {/* Order Status Distribution */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Order Status Distribution</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {totalOrders > 0 ? (
-                <ResponsiveContainer width="100%" height={300}>
-                  <PieChart>
-                    <Pie
-                      data={orderStatusData}
-                      cx="50%"
-                      cy="50%"
-                      labelLine={false}
-                      label={({ name, value }) => `${name}: ${value}`}
-                      outerRadius={100}
-                      fill="#8884d8"
-                      dataKey="value"
-                    >
-                      {orderStatusData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.fill} />
-                      ))}
-                    </Pie>
-                    <Tooltip />
-                  </PieChart>
-                </ResponsiveContainer>
-              ) : (
-                <p className="text-center text-gray-500 py-8">No order data</p>
-              )}
-            </CardContent>
-          </Card>
+          <div className="bg-white border-2 border-sage-200 rounded-lg p-6">
+            <h2 className="text-xl font-bold text-sage-900 mb-6">Distribution des Statuts de Commande</h2>
+            {totalOrders > 0 ? (
+              <ResponsiveContainer width="100%" height={300}>
+                <PieChart>
+                  <Pie
+                    data={orderStatusData}
+                    cx="50%"
+                    cy="50%"
+                    labelLine={false}
+                    label={({ name, value }) => `${name}: ${value}`}
+                    outerRadius={100}
+                    fill="#78854f"
+                    dataKey="value"
+                  >
+                    {orderStatusData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.fill} />
+                    ))}
+                  </Pie>
+                  <Tooltip contentStyle={{ backgroundColor: '#f4f3f1', border: '2px solid #78854f' }} />
+                </PieChart>
+              </ResponsiveContainer>
+            ) : (
+              <p className="text-center text-sage-500 py-8">Aucune donnée de commande</p>
+            )}
+          </div>
         </div>
 
         {/* Users and Products Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Users and Products Growth</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={[{ name: 'Count', users: totalUsers, products: totalProducts }]}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Legend />
-                  <Bar dataKey="users" fill="#3b82f6" />
-                  <Bar dataKey="products" fill="#8b5cf6" />
-                </BarChart>
-              </ResponsiveContainer>
-            </CardContent>
-          </Card>
+          <div className="bg-white border-2 border-sage-200 rounded-lg p-6">
+            <h2 className="text-xl font-bold text-sage-900 mb-6">Croissance des Utilisateurs et Produits</h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={[{ name: 'Nombre', users: totalUsers, products: totalProducts }]}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7a5" />
+                <XAxis dataKey="name" stroke="#78854f" />
+                <YAxis stroke="#78854f" />
+                <Tooltip contentStyle={{ backgroundColor: '#f4f3f1', border: '2px solid #78854f' }} />
+                <Legend />
+                <Bar dataKey="users" fill="#78854f" />
+                <Bar dataKey="products" fill="#a5b567" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Order Summary</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Pending Orders</span>
-                  <span className="text-lg font-semibold text-yellow-600">{pendingOrders}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Accepted Orders</span>
-                  <span className="text-lg font-semibold text-green-600">{acceptedOrders}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Refused Orders</span>
-                  <span className="text-lg font-semibold text-red-600">{refusedOrders}</span>
-                </div>
-                <hr className="my-4" />
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-900 font-semibold">Total Orders</span>
-                  <span className="text-lg font-bold">{totalOrders}</span>
-                </div>
+          <div className="bg-white border-2 border-sage-200 rounded-lg p-6">
+            <h2 className="text-xl font-bold text-sage-900 mb-6">Résumé des Commandes</h2>
+            <div className="space-y-4">
+              <div className="flex justify-between items-center p-4 bg-sage-50 rounded-lg border border-sage-200">
+                <span className="text-sage-700 font-semibold">Commandes en Attente</span>
+                <span className="text-lg font-bold text-yellow-600">{pendingOrders}</span>
               </div>
-            </CardContent>
-          </Card>
+              <div className="flex justify-between items-center p-4 bg-sage-50 rounded-lg border border-sage-200">
+                <span className="text-sage-700 font-semibold">Commandes Acceptées</span>
+                <span className="text-lg font-bold text-green-600">{acceptedOrders}</span>
+              </div>
+              <div className="flex justify-between items-center p-4 bg-sage-50 rounded-lg border border-sage-200">
+                <span className="text-sage-700 font-semibold">Commandes Refusées</span>
+                <span className="text-lg font-bold text-red-600">{refusedOrders}</span>
+              </div>
+              <div className="flex justify-between items-center p-4 bg-sage-900 rounded-lg border-2 border-sage-800">
+                <span className="text-white font-bold text-lg">Total des Commandes</span>
+                <span className="text-2xl font-bold text-white">{totalOrders}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </AdminLayout>

@@ -47,22 +47,24 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800 p-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-2xl p-8">
-        <div className="flex justify-center mb-4">
-          <div className="bg-red-100 p-3 rounded-lg">
-            <Lock className="w-6 h-6 text-red-600" />
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-sage-50 to-sage-100 p-4">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-lg border-2 border-sage-200 p-8">
+        <div className="flex justify-center mb-6">
+          <div className="bg-sage-100 p-4 rounded-full">
+            <Lock className="w-8 h-8 text-sage-600" />
           </div>
         </div>
 
-        <h1 className="text-3xl font-bold text-center mb-2 text-gray-900">
-          Admin Portal
-        </h1>
-        <p className="text-center text-gray-600 mb-8">Sign in to admin dashboard</p>
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-sage-900 mb-2">
+            Espace Admin
+          </h1>
+          <p className="text-sage-600">Connectez-vous au tableau de bord</p>
+        </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" className="text-sage-900 font-semibold">Email</Label>
             <Input
               id="email"
               type="email"
@@ -70,11 +72,12 @@ export default function AdminLogin() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={loading}
+              className="mt-2 border-2 border-sage-200 focus:border-sage-600"
             />
           </div>
 
           <div>
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password" className="text-sage-900 font-semibold">Mot de Passe</Label>
             <Input
               id="password"
               type="password"
@@ -82,27 +85,30 @@ export default function AdminLogin() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               disabled={loading}
+              className="mt-2 border-2 border-sage-200 focus:border-sage-600"
             />
           </div>
 
           <Button
             type="submit"
-            className="w-full bg-red-600 hover:bg-red-700 text-white"
+            className="w-full bg-sage-600 hover:bg-sage-700 text-white font-semibold py-3 rounded-lg transition-colors"
             disabled={loading}
           >
-            {loading ? 'Signing In...' : 'Admin Sign In'}
+            {loading ? 'Connexion en cours...' : 'Se Connecter'}
           </Button>
         </form>
 
-        <p className="text-center text-gray-600 mt-6">
-          <Link to="/signin" className="text-blue-600 hover:underline">
-            User Login
-          </Link>
-          {' | '}
-          <Link to="/signup" className="text-blue-600 hover:underline">
-            Sign Up
-          </Link>
-        </p>
+        <div className="mt-8 pt-6 border-t border-sage-200">
+          <p className="text-center text-sage-600">
+            <Link to="/signin" className="text-sage-600 hover:text-sage-900 font-semibold">
+              Connexion Utilisateur
+            </Link>
+            {' • '}
+            <Link to="/signup" className="text-sage-600 hover:text-sage-900 font-semibold">
+              Créer un Compte
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

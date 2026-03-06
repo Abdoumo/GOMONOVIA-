@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { Menu, X, ShoppingCart, LogOut } from "lucide-react";
 import { useCart } from "@/hooks/useCart";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { getItemCount } = useCart();
+  const { user, logout } = useAuth();
   const itemCount = getItemCount();
 
   const navLinks = [
@@ -51,6 +53,33 @@ export default function Header() {
                   </span>
                 )}
               </Link>
+              {user ? (
+                <>
+                  <Link
+                    to={user.type === "admin" ? "/admin" : "/dashboard"}
+                    className="text-sage-700 hover:text-sage-900 font-medium transition-colors"
+                  >
+                    {user.type === "admin" ? "Admin" : "Dashboard"}
+                  </Link>
+                  <button
+                    onClick={() => {
+                      logout();
+                      window.location.href = "/";
+                    }}
+                    className="text-sage-700 hover:text-sage-900 font-medium transition-colors flex items-center gap-2"
+                  >
+                    <LogOut size={20} />
+                    Se déconnecter
+                  </button>
+                </>
+              ) : (
+                <Link
+                  to="/signin"
+                  className="text-sage-700 hover:text-sage-900 font-medium transition-colors"
+                >
+                  Connexion
+                </Link>
+              )}
               <Link
                 to="/product"
                 className="bg-sage-600 text-white px-6 py-2 rounded-lg hover:bg-sage-700 transition-colors font-medium"
@@ -90,6 +119,36 @@ export default function Header() {
               <ShoppingCart size={20} />
               <span>Panier {itemCount > 0 && `(${itemCount})`}</span>
             </Link>
+            {user ? (
+              <>
+                <Link
+                  to={user.type === "admin" ? "/admin" : "/dashboard"}
+                  className="block px-4 py-2 text-sage-700 hover:bg-sage-100 rounded-lg transition-colors font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {user.type === "admin" ? "Admin" : "Dashboard"}
+                </Link>
+                <button
+                  onClick={() => {
+                    logout();
+                    setIsMenuOpen(false);
+                    window.location.href = "/";
+                  }}
+                  className="block w-full text-left px-4 py-2 text-sage-700 hover:bg-sage-100 rounded-lg transition-colors font-medium flex items-center gap-2"
+                >
+                  <LogOut size={20} />
+                  Se déconnecter
+                </button>
+              </>
+            ) : (
+              <Link
+                to="/signin"
+                className="block px-4 py-2 text-sage-700 hover:bg-sage-100 rounded-lg transition-colors font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Connexion
+              </Link>
+            )}
             <Link
               to="/product"
               className="block w-full text-center bg-sage-600 text-white px-4 py-2 rounded-lg hover:bg-sage-700 transition-colors font-medium"

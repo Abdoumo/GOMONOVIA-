@@ -66,40 +66,44 @@ export default function SignUp() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-xl p-8">
-        <h1 className="text-3xl font-bold text-center mb-2 text-gray-900">
-          Create Account
-        </h1>
-        <p className="text-center text-gray-600 mb-8">Join Gomonovia today</p>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-sage-50 to-sage-100 p-4">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-lg border-2 border-sage-200 p-8">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-sage-900 mb-2">
+            Créer un Compte
+          </h1>
+          <p className="text-sage-600">Rejoignez GOMONOVIA aujourd'hui</p>
+        </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <Label htmlFor="name">Full Name</Label>
+            <Label htmlFor="name" className="text-sage-900 font-semibold">Nom Complet</Label>
             <Input
               id="name"
               type="text"
-              placeholder="John Doe"
+              placeholder="Jean Dupont"
               value={name}
               onChange={(e) => setName(e.target.value)}
               disabled={loading}
+              className="mt-2 border-2 border-sage-200 focus:border-sage-600"
             />
           </div>
 
           <div>
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" className="text-sage-900 font-semibold">Email</Label>
             <Input
               id="email"
               type="email"
-              placeholder="john@example.com"
+              placeholder="jean@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={loading}
+              className="mt-2 border-2 border-sage-200 focus:border-sage-600"
             />
           </div>
 
           <div>
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password" className="text-sage-900 font-semibold">Mot de Passe</Label>
             <Input
               id="password"
               type="password"
@@ -107,11 +111,12 @@ export default function SignUp() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               disabled={loading}
+              className="mt-2 border-2 border-sage-200 focus:border-sage-600"
             />
           </div>
 
           <div>
-            <Label htmlFor="confirmPassword">Confirm Password</Label>
+            <Label htmlFor="confirmPassword" className="text-sage-900 font-semibold">Confirmer le Mot de Passe</Label>
             <Input
               id="confirmPassword"
               type="password"
@@ -119,31 +124,34 @@ export default function SignUp() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               disabled={loading}
+              className="mt-2 border-2 border-sage-200 focus:border-sage-600"
             />
           </div>
 
           <Button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+            className="w-full bg-sage-600 hover:bg-sage-700 text-white font-semibold py-3 rounded-lg transition-colors mt-6"
             disabled={loading}
           >
-            {loading ? 'Creating Account...' : 'Sign Up'}
+            {loading ? 'Création en cours...' : 'Créer un Compte'}
           </Button>
         </form>
 
-        <p className="text-center text-gray-600 mt-6">
-          Already have an account?{' '}
-          <Link to="/signin" className="text-blue-600 hover:underline font-semibold">
-            Sign In
-          </Link>
-        </p>
+        <div className="space-y-4 mt-8">
+          <p className="text-center text-sage-600">
+            Vous avez déjà un compte?{' '}
+            <Link to="/signin" className="text-sage-600 hover:text-sage-900 font-bold underline">
+              Se connecter
+            </Link>
+          </p>
 
-        <p className="text-center text-sm text-gray-500 mt-4">
-          Admin?{' '}
-          <Link to="/admin-login" className="text-blue-600 hover:underline">
-            Login here
-          </Link>
-        </p>
+          <p className="text-center text-sm text-sage-500">
+            Admin?{' '}
+            <Link to="/admin-login" className="text-sage-600 hover:text-sage-900 font-semibold">
+              Connectez-vous ici
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
