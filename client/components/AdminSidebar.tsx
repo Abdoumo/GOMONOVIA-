@@ -19,22 +19,22 @@ export const AdminSidebar = () => {
 
   const navItems = [
     {
-      label: 'Dashboard',
+      label: 'Tableau de Bord',
       href: '/admin',
       icon: BarChart3,
     },
     {
-      label: 'Users',
+      label: 'Utilisateurs',
       href: '/admin/users',
       icon: Users,
     },
     {
-      label: 'Products',
+      label: 'Produits',
       href: '/admin/products',
       icon: Package,
     },
     {
-      label: 'Orders',
+      label: 'Commandes',
       href: '/admin/orders',
       icon: ShoppingCart,
     },
@@ -46,7 +46,7 @@ export const AdminSidebar = () => {
     <>
       {/* Mobile Menu Button */}
       <button
-        className="fixed top-4 right-4 z-50 md:hidden p-2 bg-slate-800 text-white rounded-lg"
+        className="fixed top-4 right-4 z-50 md:hidden p-2 bg-sage-600 text-white rounded-lg"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -54,13 +54,13 @@ export const AdminSidebar = () => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed left-0 top-0 h-screen w-64 bg-slate-900 text-white p-6 transform transition-transform md:transform-none z-40 ${
+        className={`fixed left-0 top-0 h-screen w-64 bg-sage-900 text-white p-6 transform transition-transform md:transform-none z-40 ${
           isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
         }`}
       >
         <div className="mb-8">
-          <h1 className="text-2xl font-bold">Gomonovia</h1>
-          <p className="text-sm text-slate-400">Admin Panel</p>
+          <h1 className="text-2xl font-bold">GOMONOVIA</h1>
+          <p className="text-sm text-sage-300">Espace Admin</p>
         </div>
 
         <nav className="space-y-2 mb-8">
@@ -74,8 +74,8 @@ export const AdminSidebar = () => {
                 onClick={() => setIsOpen(false)}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                   active
-                    ? 'bg-blue-600 text-white'
-                    : 'text-slate-300 hover:bg-slate-800'
+                    ? 'bg-sage-600 text-white'
+                    : 'text-sage-200 hover:bg-sage-800'
                 }`}
               >
                 <Icon className="w-5 h-5" />
@@ -85,16 +85,16 @@ export const AdminSidebar = () => {
           })}
         </nav>
 
-        <div className="border-t border-slate-700 pt-4">
+        <div className="border-t border-sage-700 pt-4">
           <Button
             onClick={() => {
               logout();
               setIsOpen(false);
             }}
-            className="w-full flex items-center gap-2 bg-red-600 hover:bg-red-700"
+            className="w-full flex items-center gap-2 bg-sage-600 hover:bg-sage-700 text-white"
           >
             <LogOut className="w-4 h-4" />
-            Logout
+            Se déconnecter
           </Button>
         </div>
       </aside>
@@ -114,7 +114,7 @@ export const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex">
       <AdminSidebar />
-      <main className="flex-1 md:ml-64 p-4 md:p-8 min-h-screen bg-slate-50">
+      <main className="flex-1 md:ml-64 p-4 md:p-8 min-h-screen bg-white">
         {children}
       </main>
     </div>

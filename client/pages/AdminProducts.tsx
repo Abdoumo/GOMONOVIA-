@@ -56,8 +56,8 @@ export default function AdminProducts() {
 
     if (!form.name || !form.description || !form.price || !form.image) {
       toast({
-        title: 'Error',
-        description: 'Please fill in all fields',
+        title: 'Erreur',
+        description: 'Veuillez remplir tous les champs',
         variant: 'destructive',
       });
       return;
@@ -66,8 +66,8 @@ export default function AdminProducts() {
     const price = parseFloat(form.price);
     if (isNaN(price) || price <= 0) {
       toast({
-        title: 'Error',
-        description: 'Price must be a valid positive number',
+        title: 'Erreur',
+        description: 'Le prix doit être un nombre positif valide',
         variant: 'destructive',
       });
       return;
@@ -81,8 +81,8 @@ export default function AdminProducts() {
         image: form.image,
       });
       toast({
-        title: 'Success',
-        description: 'Product updated successfully',
+        title: 'Succès',
+        description: 'Produit mis à jour avec succès',
       });
     } else {
       addProduct({
@@ -92,8 +92,8 @@ export default function AdminProducts() {
         image: form.image,
       });
       toast({
-        title: 'Success',
-        description: 'Product created successfully',
+        title: 'Succès',
+        description: 'Produit créé avec succès',
       });
     }
 
@@ -115,12 +115,12 @@ export default function AdminProducts() {
   };
 
   const handleDelete = (productId: string) => {
-    if (window.confirm('Are you sure you want to delete this product?')) {
+    if (window.confirm('Êtes-vous sûr de vouloir supprimer ce produit?')) {
       deleteProduct(productId);
       setProducts(getProducts());
       toast({
-        title: 'Success',
-        description: 'Product deleted successfully',
+        title: 'Succès',
+        description: 'Produit supprimé avec succès',
       });
     }
   };
@@ -136,29 +136,29 @@ export default function AdminProducts() {
       <div className="space-y-6">
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Products Management</h1>
-            <p className="text-gray-500 mt-2">Manage product catalog</p>
+            <h1 className="text-4xl font-bold text-sage-900">Gestion des Produits</h1>
+            <p className="text-sage-600 mt-2">Gérez le catalogue de produits</p>
           </div>
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogTrigger asChild>
-              <Button className="bg-blue-600 hover:bg-blue-700" onClick={() => handleCloseDialog()}>
+              <Button className="bg-sage-600 hover:bg-sage-700 text-white" onClick={() => handleCloseDialog()}>
                 <Plus className="w-4 h-4 mr-2" />
-                Add Product
+                Ajouter un Produit
               </Button>
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>{editingId ? 'Edit Product' : 'Add New Product'}</DialogTitle>
+                <DialogTitle>{editingId ? 'Éditer le Produit' : 'Ajouter un Nouveau Produit'}</DialogTitle>
               </DialogHeader>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <Label htmlFor="name">Product Name</Label>
+                  <Label htmlFor="name">Nom du Produit</Label>
                   <Input
                     id="name"
                     name="name"
                     value={form.name}
                     onChange={handleFormChange}
-                    placeholder="Product name"
+                    placeholder="Nom du produit"
                   />
                 </div>
                 <div>
@@ -168,13 +168,13 @@ export default function AdminProducts() {
                     name="description"
                     value={form.description}
                     onChange={handleFormChange}
-                    placeholder="Product description"
-                    className="w-full p-2 border border-gray-300 rounded-md"
+                    placeholder="Description du produit"
+                    className="w-full p-2 border-2 border-sage-200 rounded-md"
                     rows={3}
                   />
                 </div>
                 <div>
-                  <Label htmlFor="price">Price</Label>
+                  <Label htmlFor="price">Prix (DA)</Label>
                   <Input
                     id="price"
                     name="price"
@@ -186,7 +186,7 @@ export default function AdminProducts() {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="image">Image URL</Label>
+                  <Label htmlFor="image">URL de l'Image</Label>
                   <Input
                     id="image"
                     name="image"
@@ -195,8 +195,8 @@ export default function AdminProducts() {
                     placeholder="https://example.com/image.jpg"
                   />
                 </div>
-                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
-                  {editingId ? 'Update Product' : 'Create Product'}
+                <Button type="submit" className="w-full bg-sage-600 hover:bg-sage-700 text-white">
+                  {editingId ? 'Éditer le Produit' : 'Créer un Produit'}
                 </Button>
               </form>
             </DialogContent>
@@ -207,10 +207,10 @@ export default function AdminProducts() {
         <div className="relative">
           <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
           <Input
-            placeholder="Search products..."
+            placeholder="Rechercher des produits..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-10"
+            className="pl-10 border-2 border-sage-200"
           />
         </div>
 
@@ -218,7 +218,7 @@ export default function AdminProducts() {
         {filteredProducts.length === 0 ? (
           <Card>
             <CardContent className="pt-6">
-              <p className="text-center text-gray-500 py-8">No products found</p>
+              <p className="text-center text-sage-600 py-8">Aucun produit trouvé</p>
             </CardContent>
           </Card>
         ) : (
@@ -236,8 +236,8 @@ export default function AdminProducts() {
                   />
                   <h3 className="font-semibold text-gray-900 line-clamp-2">{product.name}</h3>
                   <p className="text-gray-600 text-sm mt-2 line-clamp-2">{product.description}</p>
-                  <p className="text-lg font-bold text-blue-600 mt-3">
-                    ${product.price.toFixed(2)}
+                  <p className="text-lg font-bold text-sage-600 mt-3">
+                    {product.price.toLocaleString('fr-FR')} DA
                   </p>
                   <p className="text-xs text-gray-500 mt-2">
                     {format(new Date(product.createdAt), 'MMM dd, yyyy')}

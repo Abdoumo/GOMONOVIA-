@@ -33,12 +33,12 @@ export default function AdminUsers() {
   }, [users, searchTerm]);
 
   const handleDelete = (userId: string) => {
-    if (window.confirm('Are you sure you want to delete this user?')) {
+    if (window.confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?')) {
       deleteUser(userId);
       setUsers(getUsers());
       toast({
-        title: 'Success',
-        description: 'User deleted successfully',
+        title: 'Succès',
+        description: 'Utilisateur supprimé avec succès',
       });
     }
   };
@@ -54,8 +54,8 @@ export default function AdminUsers() {
 
     if (!editName || !editEmail) {
       toast({
-        title: 'Error',
-        description: 'Please fill in all fields',
+        title: 'Erreur',
+        description: 'Veuillez remplir tous les champs',
         variant: 'destructive',
       });
       return;
@@ -69,8 +69,8 @@ export default function AdminUsers() {
     setUsers(getUsers());
     setEditingUser(null);
     toast({
-      title: 'Success',
-      description: 'User updated successfully',
+      title: 'Succès',
+      description: 'Utilisateur mis à jour avec succès',
     });
   };
 
@@ -78,47 +78,47 @@ export default function AdminUsers() {
     <AdminLayout>
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Users Management</h1>
-          <p className="text-gray-500 mt-2">Manage system users</p>
+          <h1 className="text-4xl font-bold text-sage-900">Gestion des Utilisateurs</h1>
+          <p className="text-sage-600 mt-2">Gérez les utilisateurs du système</p>
         </div>
 
         {/* Search */}
         <div className="relative">
-          <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+          <Search className="absolute left-3 top-3 h-4 w-4 text-sage-400" />
           <Input
-            placeholder="Search users by name or email..."
+            placeholder="Rechercher des utilisateurs par nom ou email..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-10"
+            className="pl-10 border-2 border-sage-200"
           />
         </div>
 
         {/* Users Table */}
         <Card>
           <CardHeader>
-            <CardTitle>All Users ({filteredUsers.length})</CardTitle>
+            <CardTitle className="text-sage-900">Tous les Utilisateurs ({filteredUsers.length})</CardTitle>
           </CardHeader>
           <CardContent>
             {filteredUsers.length === 0 ? (
-              <p className="text-center text-gray-500 py-8">No users found</p>
+              <p className="text-center text-sage-600 py-8">Aucun utilisateur trouvé</p>
             ) : (
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Name</th>
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Email</th>
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Joined</th>
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Actions</th>
+                    <tr className="border-b-2 border-sage-200 bg-sage-50">
+                      <th className="text-left py-4 px-4 font-bold text-sage-900">Nom</th>
+                      <th className="text-left py-4 px-4 font-bold text-sage-900">Email</th>
+                      <th className="text-left py-4 px-4 font-bold text-sage-900">Inscrit</th>
+                      <th className="text-left py-4 px-4 font-bold text-sage-900">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
                     {filteredUsers.map((user) => (
-                      <tr key={user.id} className="border-b border-gray-100 hover:bg-gray-50">
-                        <td className="py-3 px-4">{user.name}</td>
-                        <td className="py-3 px-4 text-gray-600">{user.email}</td>
-                        <td className="py-3 px-4 text-sm text-gray-500">
-                          {format(new Date(user.createdAt), 'MMM dd, yyyy')}
+                      <tr key={user.id} className="border-b border-sage-100 hover:bg-sage-50 transition-colors">
+                        <td className="py-4 px-4 text-sage-900">{user.name}</td>
+                        <td className="py-4 px-4 text-sage-700">{user.email}</td>
+                        <td className="py-4 px-4 text-sm text-sage-600">
+                          {format(new Date(user.createdAt), 'dd MMM yyyy')}
                         </td>
                         <td className="py-3 px-4 flex gap-2">
                           <Dialog>
@@ -133,31 +133,33 @@ export default function AdminUsers() {
                             </DialogTrigger>
                             <DialogContent>
                               <DialogHeader>
-                                <DialogTitle>Edit User</DialogTitle>
+                                <DialogTitle className="text-sage-900">Modifier l'Utilisateur</DialogTitle>
                               </DialogHeader>
                               <div className="space-y-4">
                                 <div>
-                                  <Label htmlFor="edit-name">Name</Label>
+                                  <Label htmlFor="edit-name" className="text-sage-900">Nom</Label>
                                   <Input
                                     id="edit-name"
                                     value={editName}
                                     onChange={(e) => setEditName(e.target.value)}
+                                    className="border-2 border-sage-200"
                                   />
                                 </div>
                                 <div>
-                                  <Label htmlFor="edit-email">Email</Label>
+                                  <Label htmlFor="edit-email" className="text-sage-900">Email</Label>
                                   <Input
                                     id="edit-email"
                                     type="email"
                                     value={editEmail}
                                     onChange={(e) => setEditEmail(e.target.value)}
+                                    className="border-2 border-sage-200"
                                   />
                                 </div>
                                 <Button
                                   onClick={handleSaveEdit}
-                                  className="w-full bg-blue-600 hover:bg-blue-700"
+                                  className="w-full bg-sage-600 hover:bg-sage-700 text-white"
                                 >
-                                  Save Changes
+                                  Enregistrer les modifications
                                 </Button>
                               </div>
                             </DialogContent>

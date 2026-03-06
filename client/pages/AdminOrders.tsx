@@ -28,16 +28,21 @@ export default function AdminOrders() {
   const handleStatusChange = (orderId: string, newStatus: 'pending' | 'accepted' | 'refused') => {
     updateOrder(orderId, { status: newStatus });
     setOrders(getOrders());
+    const statusLabels = {
+      pending: 'En Attente',
+      accepted: 'Acceptée',
+      refused: 'Refusée'
+    };
     toast({
-      title: 'Success',
-      description: `Order status updated to ${newStatus}`,
+      title: 'Succès',
+      description: `Statut de la commande mis à jour à ${statusLabels[newStatus]}`,
     });
   };
 
   const handleContactBuyer = (email: string, productName: string) => {
-    const subject = encodeURIComponent(`Your Gomonovia Order - ${productName}`);
+    const subject = encodeURIComponent(`Votre Commande GOMONOVIA - ${productName}`);
     const body = encodeURIComponent(
-      `Dear Customer,\n\nThank you for your order of ${productName} from Gomonovia.\n\nBest regards,\nGomonovia Team`
+      `Cher Client,\n\nMerci pour votre commande de ${productName} chez GOMONOVIA.\n\nCordialement,\nÉquipe GOMONOVIA`
     );
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
   };
@@ -57,9 +62,9 @@ export default function AdminOrders() {
 
   const getStatusBadge = (status: string) => {
     const statusConfig = {
-      accepted: { label: 'Accepted', variant: 'default' as const },
-      refused: { label: 'Refused', variant: 'destructive' as const },
-      pending: { label: 'Pending', variant: 'outline' as const },
+      accepted: { label: 'Acceptée', variant: 'default' as const },
+      refused: { label: 'Refusée', variant: 'destructive' as const },
+      pending: { label: 'En Attente', variant: 'outline' as const },
     };
     const config = statusConfig[status as keyof typeof statusConfig] || { label: status, variant: 'outline' as const };
     return <Badge variant={config.variant}>{config.label}</Badge>;
@@ -69,25 +74,25 @@ export default function AdminOrders() {
     <AdminLayout>
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Orders Management</h1>
-          <p className="text-gray-500 mt-2">Manage customer orders</p>
+          <h1 className="text-4xl font-bold text-sage-900">Gestion des Commandes</h1>
+          <p className="text-sage-600 mt-2">Gérez les commandes des clients</p>
         </div>
 
         {/* Filter */}
         <div className="flex gap-4">
           <Select value={filterStatus} onValueChange={setFilterStatus}>
             <SelectTrigger className="w-40">
-              <SelectValue placeholder="Filter by status" />
+              <SelectValue placeholder="Filtrer par statut" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Orders</SelectItem>
-              <SelectItem value="pending">Pending</SelectItem>
-              <SelectItem value="accepted">Accepted</SelectItem>
-              <SelectItem value="refused">Refused</SelectItem>
+              <SelectItem value="all">Toutes les Commandes</SelectItem>
+              <SelectItem value="pending">En Attente</SelectItem>
+              <SelectItem value="accepted">Acceptée</SelectItem>
+              <SelectItem value="refused">Refusée</SelectItem>
             </SelectContent>
           </Select>
-          <div className="text-sm text-gray-600">
-            Showing {filteredOrders.length} of {orders.length} orders
+          <div className="text-sm text-sage-600">
+            Affichage de {filteredOrders.length} sur {orders.length} commandes
           </div>
         </div>
 
@@ -100,25 +105,25 @@ export default function AdminOrders() {
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Order ID</th>
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Product</th>
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Buyer Email</th>
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Price</th>
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Date</th>
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Status</th>
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Actions</th>
+                    <tr className="border-b-2 border-sage-200 bg-sage-50">
+                      <th className="text-left py-4 px-4 font-bold text-sage-900">N° Commande</th>
+                      <th className="text-left py-4 px-4 font-bold text-sage-900">Produit</th>
+                      <th className="text-left py-4 px-4 font-bold text-sage-900">Email Acheteur</th>
+                      <th className="text-left py-4 px-4 font-bold text-sage-900">Prix</th>
+                      <th className="text-left py-4 px-4 font-bold text-sage-900">Date</th>
+                      <th className="text-left py-4 px-4 font-bold text-sage-900">Statut</th>
+                      <th className="text-left py-4 px-4 font-bold text-sage-900">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
                     {filteredOrders.map((order) => (
-                      <tr key={order.id} className="border-b border-gray-100 hover:bg-gray-50">
-                        <td className="py-3 px-4 text-sm font-mono">{order.id.slice(-8)}</td>
-                        <td className="py-3 px-4">{order.productName}</td>
-                        <td className="py-3 px-4 text-sm">{order.buyerEmail}</td>
-                        <td className="py-3 px-4 font-semibold">${order.price.toFixed(2)}</td>
-                        <td className="py-3 px-4 text-sm text-gray-600">
-                          {format(new Date(order.date), 'MMM dd, yyyy')}
+                      <tr key={order.id} className="border-b border-sage-100 hover:bg-sage-50 transition-colors">
+                        <td className="py-4 px-4 text-sm font-mono text-sage-900">{order.id.slice(-8)}</td>
+                        <td className="py-4 px-4 text-sage-900">{order.productName}</td>
+                        <td className="py-4 px-4 text-sm text-sage-700">{order.buyerEmail}</td>
+                        <td className="py-4 px-4 font-bold text-sage-900">{order.price.toLocaleString('fr-FR')} DA</td>
+                        <td className="py-4 px-4 text-sm text-sage-600">
+                          {format(new Date(order.date), 'dd MMM yyyy')}
                         </td>
                         <td className="py-3 px-4">
                           <div className="flex items-center gap-2">
@@ -141,9 +146,9 @@ export default function AdminOrders() {
                                 <SelectValue />
                               </SelectTrigger>
                               <SelectContent>
-                                <SelectItem value="pending">Pending</SelectItem>
-                                <SelectItem value="accepted">Accept</SelectItem>
-                                <SelectItem value="refused">Refuse</SelectItem>
+                                <SelectItem value="pending">En Attente</SelectItem>
+                                <SelectItem value="accepted">Accepter</SelectItem>
+                                <SelectItem value="refused">Refuser</SelectItem>
                               </SelectContent>
                             </Select>
 
