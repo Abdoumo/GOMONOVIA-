@@ -1,7 +1,7 @@
 import { useAuth } from '@/contexts/AuthContext';
 import { getUserOrders } from '@/lib/storage';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { format } from 'date-fns';

@@ -17,7 +17,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { Users, Package, ShoppingCart } from 'lucide-react';
-import { format, parse, startOfDay } from 'date-fns';
+import { format, parse } from 'date-fns';
 
 export default function AdminDashboard() {
   const users = getUsers();
