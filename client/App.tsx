@@ -28,6 +28,10 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import AdminLogin from "./pages/AdminLogin";
 import MyOrders from "./pages/MyOrders";
+import UserDashboard from "./pages/UserDashboard";
+
+// Products
+import Products from "./pages/Products";
 
 // Admin Pages
 import AdminDashboard from "./pages/AdminDashboard";
@@ -57,12 +61,23 @@ const App = () => (
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/thank-you" element={<ThankYou />} />
 
+            {/* Products Route */}
+            <Route path="/products" element={<Products />} />
+
             {/* Auth Routes */}
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/admin-login" element={<AdminLogin />} />
 
             {/* Protected User Routes */}
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute requiredType="user">
+                  <UserDashboard />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/my-orders"
               element={

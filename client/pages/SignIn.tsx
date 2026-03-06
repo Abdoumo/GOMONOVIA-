@@ -35,7 +35,7 @@ export default function SignIn() {
         title: 'Success',
         description: 'Logged in successfully!',
       });
-      navigate('/');
+      navigate('/dashboard');
     } else {
       toast({
         title: 'Error',
