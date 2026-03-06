@@ -3,10 +3,13 @@ import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useCart } from "@/hooks/useCart";
+import { useAuth } from "@/contexts/AuthContext";
+import { addOrder } from "@/lib/storage";
 
 export default function Checkout() {
   const navigate = useNavigate();
   const { cart, clearCart } = useCart();
+  const { user } = useAuth();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -57,6 +60,36 @@ export default function Checkout() {
 
     // Simulate payment processing
     setTimeout(() => {
+      // Create orders for each item in cart
+      const buyerEmail = formData.email;
+
+      if (user) {
+        // User is logged in - create orders with userId
+        cart.items.forEach((item) => {
+          addOrder({
+            userId: user.userId,
+            productId: item.id,
+            productName: item.name,
+            price: item.price,
+            status: 'pending',
+            buyerEmail: buyerEmail,
+          });
+        });
+      } else {
+        // User is not logged in - create orders with guest user ID
+        const guestUserId = `guest-${Date.now()}`;
+        cart.items.forEach((item) => {
+          addOrder({
+            userId: guestUserId,
+            productId: item.id,
+            productName: item.name,
+            price: item.price,
+            status: 'pending',
+            buyerEmail: buyerEmail,
+          });
+        });
+      }
+
       // Save order info to sessionStorage for thank you page
       sessionStorage.setItem(
         "lastOrder",
