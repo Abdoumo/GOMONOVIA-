@@ -36,7 +36,6 @@ import Products from "./pages/Products";
 // Admin Pages
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminUsers from "./pages/AdminUsers";
-import AdminProducts from "./pages/AdminProducts";
 import AdminOrders from "./pages/AdminOrders";
 
 const queryClient = new QueryClient();
@@ -101,14 +100,6 @@ const App = () => (
               element={
                 <ProtectedRoute requiredType="admin">
                   <AdminUsers />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/admin/products"
-              element={
-                <ProtectedRoute requiredType="admin">
-                  <AdminProducts />
                 </ProtectedRoute>
               }
             />

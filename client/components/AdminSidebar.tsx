@@ -29,11 +29,6 @@ export const AdminSidebar = () => {
       icon: Users,
     },
     {
-      label: 'Produits',
-      href: '/admin/products',
-      icon: Package,
-    },
-    {
       label: 'Commandes',
       href: '/admin/orders',
       icon: ShoppingCart,
